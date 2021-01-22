@@ -1,56 +1,224 @@
 doctype html
 html
   head
-      title Lets talk about ... Example
+      title Lets talk about ... API Workshop #1
       meta(charset='utf-8')
       link(href='styles.styl'  rel='stylesheet' type='text/css')
   body
     section.slides.layout-regular.template-default
       article.build
-        h1 H1
-        h2 H2
+        h1 API Workshop
+        h2 #1
       article
-        img.bg(src="node_modules/lets-talk-about--template/assets/memes/philosoraptor.jpg")
-        h1 Background Image
-      article
-        img.bg.cover(src="node_modules/lets-talk-about--template/assets/memes/philosoraptor.jpg")
-        h1 Cover Image
-      article
-        ul
-          li Inline Image
-          li
-            img(src="node_modules/lets-talk-about--template/assets/memes/like-a-boss.jpg")
-      article
-        h2 List
+        h2 Agenda
         ul.build
-          li 1.
-          li 2.
-          li 3.
-          li 4.
+          li 1. Dababase
+          li 2. Models
+          li 3. Operations
+          li 4. API
       article
-        h2 Code
-        pre
-          | const code = 'without line numbers';
-        pre.linenums
-          | const code = 'with line numbers';
+        h2 Database
+        ul.build
+          li 1. Migrations
+          li 2. Schema
+          li 3. Seeds
+          li 4. Views
+          li 5. Functions
+          li 6. Triggers
       article
-        h2 Code with highlights
-        pre.linenums.h1
-          | const line1 = 'normal'
-          | const line2 = 'highlight'
-          | const line3 = 'normal'
-      article.section
-        h1 New Section
+        h2 Migrations
+        ul.build
+          li Define the steps needed how to build the database schema
       article
+        h2 Schema
+        ul.build
+          li Current state of database schema after applying all migrations
+      article
+        h2 Seeds
+        ul.build
+          li How to prefill the database
+      article
+        h2 Views
+        ul.build
+          li SQL SELECT Commands which can be used as tables
+      article
+        h2 Functions
+        ul.build
+          li Code snippets which can be executed manually or by triggers
+      article
+        h2 Triggers
+        ul.build
+          li Define events on which database functions should be called
+      article
+        h2 Models
+        ul.build
+          li 1. Relationships
+          li 2. Callbacks
+          li 3. Scopes
+          li 4. Validations
+          li 5. Small helpers
+      article
+        h2 Relationships
+        ul.build
+          li How is the relationship of current model to other models
+          li belongs_to (parent)
+          li has_one (1:1 relationship)
+          li has_many (1:n relationship)
+      article
+        h2 Callbacks
+        ul.build
+          li Defines what to do after certain events
+          li before/after
+          li validation
+          li save
+          li create/update/destroy
+          li commit/rollback
+      article
+        h2 Scopes
+        ul.build
+          li Define SQL queries and filters
+          li Read only
+      article
+        h2 Validations
+        ul.build
+          li Presence
+          li Uniqueness
+          li Min/Max
+          li Custom
+      article
+        h2 Operations
+        ul.build
+          li 1. Not part of rails
+          li 2. Initalize
+          li 3. Call
+          li 4. Helpers
+      article
+        h2 Not part of rails
+        ul.build
+          li Business logic
+          li Usually this is part of the Model, Controller or API
+          li Files got too huge and hard to mange so we separated the this
+      article
+        h2 Initialize
+        ul.build
+          li Defines which context and parameters are needed to execute
+          li Repositories* (soon Models)
+          li Context
+          li Helpers
+      article
+        h2 Call
+        ul.build
+          li Executes the operation
+          li Parameters
+          li Parameter Defauls
+          li Uses helpers if logic is complex
+      article
+        h2 Helpers
+        ul.build
+          li Helps to split logic into smaller easy to understand chunks
+          li Parameters
+      article
+        h2 API
+        ul.build
+          li 1. Helpers
+          li 2. Entry Point
+          li 3. Endpoint
+          li 4. Documentation
+      article
+        h2 Helpers
+        ul.build
+          li Small code snippets/definitions which are shared <br> and accessible for all Endpoints
+          li Parameters
+          li Reusable logic
+      article
+        h2 Entry point
+        ul.build
+          li Global definitions of our API
+          li Which versions exist
+          li Which endpoints are present
+          li Global documentation
+      article
+        h2 Endpoint
+        ul.build
+          li 1. Parameters
+          li 2. Helpers
+          li 3. Resource
+      article
+        h2 Helpers
+        ul.build
+          li Small code snippets/definitions which are shared <br> and accessible for all Resources in SAME FILE
+          li Reusable logic
+      article
+        h2 Parameters
+        ul.build
+          li Defines which parameters could be present when calling the endpoint
+          li Validates data type
+          li Ignores not mentioned parameters
+      article
+        h2 Actions
+        ul.build
+          li Defines which endpoints are available
+          li Path (/absences, ...)
+          li Method (get, post, ...)
+      article
+        h2 Resource Workflow
+        ul.build
+          li Authenticate
+          li Fetch context
+          li Check for errors
+          li Business logic
+          li Return data
+      article
+        h2 Documentation
+        ul.build
+          li 1. Introduction
+          li 2. Endpoint Description
+          li 3. Action Description
+          li 4. Entities
+          li 5. Parameters
+      article
+        h2 Introduction
+        ul.build
+          li Global description shown above all resources
+      article
+        h2 Endpoint Description
+        ul.build
+          li Description on top of an endpoint
+      article
+        h2 Resource Description
+        ul.build
+          li Implementation notes for each resource
+      article
+        h2 Entities
+        ul.build
+          li Use for sample responses (and/or parameters)
+      article
+        h2 Parameters
+        ul.build
+          li Add a description for each parameter
+      article
+        h1 Links
+      article
+        h2 Rails Links
         ul
           li
-            em Emphasis
+            a(href="https://guides.rubyonrails.org/association_basics.html") Relationships
           li
-            i Italic
-          li Inline <em>Emphasis</em> and <i>Italic</i>
+            a(href="https://guides.rubyonrails.org/active_record_validations.html") Validations
           li
-            a(href="#") Link
+            a(href="https://guides.rubyonrails.org/active_record_callbacks.html") Callbacks
+          li
+            a(href="https://medium.com/shyftplan-techblog/how-to-refactor-big-rails-projects-12fc4e4ddcd2") Blog Article about Operations
+          li
+            a(href="https://github.com/ruby-grape/grape") Grape Readme (Our API Framework)
       article
-        video(src="#" loop controls)
+        h2 API Docs Examples
+        ul
+          li
+            a(href="https://shyfplan.com/swagger") Shyftplan
+          li
+            a(href="https://www.easybill.de/api") Easybill
+          li
+            a(href="https://petstore.swagger.io/") Petstore Example
 
     script(src='node_modules/lets-talk-about--template/main.js')
